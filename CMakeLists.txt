@@ -3,7 +3,7 @@ project(contacts_app C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(contacts_app src/main.c
+add_executable(contacts_app
         include/contact_types.h
         src/model.c
         src/view.c
