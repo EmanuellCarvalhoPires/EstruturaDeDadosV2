@@ -20,6 +20,7 @@ contact_model_t* Model_Initialize(void) {
     }
 
     // 2. Aloca o bloco contíguo de 5000 contatos
+    // aloca um espaço na memória de vetor que tem 5 mil posições do tamanho contact_t
     model->engine->data = malloc(sizeof(contact_t) * STATIC_VECTOR_CAPACITY);
     if (model->engine->data == NULL) {
         free(model->engine);
@@ -51,9 +52,12 @@ void Model_Destroy(contact_model_t *model) {
     }
 }
 
+// essa função serve para inserir no objeto "temp_contact" no atributo correspondente o valor retornado pela função
 static void Helper_CleanJsonStr(char *dest, const char *src, size_t max_len) {
     size_t i = 0, j = 0;
     while (src[i] != '\0' && j < max_len - 1) {
+        // aqui nesse if ele vai verificar dentro do array de caracteres, se o caracter que ele está comparando é diferente de todas as opções dentro desse IF
+        // Se for diferente aí sim, aquele caracter vai ir para o array de caracteres no endereço de memória recebido dentro da var "*dest"
         if (src[i] != '"' && src[i] != '\\' && src[i] != ',' && src[i] != '\n' && src[i] != '\r') {
             dest[j++] = src[i];
         }
@@ -98,7 +102,7 @@ bool Model_LoadFromJson(contact_model_t *model, const char *filename) {
             continue;
         }
 
-        // Identifica o fechamento de blocos lógicos
+        // Identifica o fechamento de blocos lógicos, ou seja saiu do bloco do endereço, volta para o contato
         if (strstr(linha, "}")) {
             if (dentro_do_endereco) {
                 dentro_do_endereco = false; // Saiu do bloco do endereço, volta para o contato
@@ -106,10 +110,12 @@ bool Model_LoadFromJson(contact_model_t *model, const char *filename) {
             }
 
             if (dentro_do_contato) {
-                // Copia fisicamente a struct temporária para a região de memória do vetor
-                contact_t *dest = &model->engine->data[model->total_count];
-                memcpy(dest, &temp_contact, sizeof(contact_t));
 
+                // AQUI ACONTECE A INSERÇÃO NO VETOR DE CONTATOS
+                // Cria uma variável ponteiro que recebe o endereço da POSIÇÃO ATUAL dentro do vetor data
+                contact_t *dest = &model->engine->data[model->total_count];
+                    // memcpy(destino, origem, quantidade_de_bytes); copia um bloco de memória em um endereço para outro endereço
+                    memcpy(dest, &temp_contact, sizeof(contact_t));
                 model->total_count++;
 
                 // Sincroniza o gerador automático para evitar colisão de IDs nas próximas inserções
@@ -120,12 +126,13 @@ bool Model_LoadFromJson(contact_model_t *model, const char *filename) {
             }
         }
 
-        // Parser manual de extração de chaves e valores textuais
+        // Esse IF é responsável por inserir dentro de temp_contact o valor do "objeto" lido no JSON
         if (dentro_do_contato) {
             char chave[64], valor[128];
-            if (sscanf(linha, " \"%[^\"]\": \"%[^\"]\"", chave, valor) == 2 ||
-                sscanf(linha, " \"%[^\"]\": %s", chave, valor) == 2) {
+            // Insere nas variáveis chave e valor a string correspondente
+            if (sscanf(linha, " \"%[^\"]\": \"%[^\"]\"", chave, valor) == 2 || sscanf(linha, " \"%[^\"]\": %s", chave, valor) == 2) {
 
+                //strcmp serve comparar duas string e dizer se elas são iguais, se forem iguais o strcmp vai retornar 0 | Devolve um número maior que 0 (positivo): Se a primeira string for "maior" (vier depois na ordem alfabética) que a segunda | Devolve um número menor que 0 (negativo): Se a primeira string for "menor" (vier antes na ordem alfabética) que a segunda
                 if (dentro_do_endereco) {
                     if (strcmp(chave, "street") == 0)
                         Helper_CleanJsonStr(temp_contact.address1.street, valor, MAX_STREET_LEN);
@@ -139,7 +146,8 @@ bool Model_LoadFromJson(contact_model_t *model, const char *filename) {
                         Helper_CleanJsonStr(temp_contact.address1.country, valor, MAX_COUNTRY_LEN);
                     else if (strcmp(chave, "zip_code") == 0)
                         Helper_CleanJsonStr(temp_contact.address1.zip_code, valor, MAX_ZIP_LEN);
-                } else {
+                }
+                else {
                     if (strcmp(chave, "id") == 0)
                         temp_contact.id = atoi(valor);
                     else if (strcmp(chave, "nome") == 0)
@@ -203,10 +211,24 @@ bool Model_SaveToJson(const contact_model_t *model, const char *filename) {
 // SUAS FUNÇÕES (Implemente a lógica abaixo)
 // ============================================================================
 
+// Você precisa
+
 bool Model_AddContact(contact_model_t *model, const contact_t *new_contact) {
-    // Dica: Verifique se model->total_count < STATIC_VECTOR_CAPACITY
-    // Dica: Use model->engine->data[model->total_count] para inserir
-    // Dica: Atualize model->total_count e model->engine->next_id
+    // Verificar se model->total_count < STATIC_VECTOR_CAPACITY
+    if (model->total_count >= STATIC_VECTOR_CAPACITY) {
+        return NULL;
+    }
+
+    // o vetor que você vai inserir o contato é: model->engine->data
+
+    // Aqui eu devo chamar a função "Model_LoadFromJson" que vai retornar true or false, se ele retornar true significa que ele obteve sucesso
+    // Ao tentar preencher o "objeto" contact_t temp_contact, ou seja, você pode usar esse "objeto" para inserir no vetor
+
+    // Use model->engine->data[model->total_count] para inserir o "objeto" temp_contact no vetor
+
+    // Atualize model->total_count e model->engine->next_id
+    //
+
     return false;
 }
 

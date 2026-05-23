@@ -1,0 +1,326 @@
+{
+  "version": "1.0",
+  "total_records": 20,
+  "contacts": [
+    {
+      "id": 1,
+      "nome": "Mateo",
+      "sobrenome": "Silva",
+      "cargo": "Desenvolvedor Backend",
+      "celular": "+5521998765432",
+      "email": "mateo.silva@email.com.br",
+      "address1": {
+        "street": "Avenida Atlântica, 1240",
+        "neighborhood": "Copacabana",
+        "city": "Rio de Janeiro",
+        "state": "RJ",
+        "country": "Brasil",
+        "zip_code": "22021-001"
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Sarah",
+      "sobrenome": "Jenkins",
+      "cargo": "Product Manager",
+      "celular": "+12125550143",
+      "email": "sjenkins@techcorp.com",
+      "address1": {
+        "street": "5th Avenue, 350",
+        "neighborhood": "Manhattan",
+        "city": "New York",
+        "state": "NY",
+        "country": "EUA",
+        "zip_code": "10118"
+      }
+    },
+    {
+      "id": 3,
+      "nome": "Lucas",
+      "sobrenome": "Dubois",
+      "cargo": "Chef de Cuisine",
+      "celular": "+33142277889",
+      "email": "l.dubois@bistro.fr",
+      "address1": {
+        "street": "Rue de Rivoli, 72",
+        "neighborhood": "Le Marais",
+        "city": "Paris",
+        "state": "Île-de-France",
+        "country": "França",
+        "zip_code": "75004"
+      }
+    },
+    {
+      "id": 4,
+      "nome": "Beatriz",
+      "sobrenome": "Souza",
+      "cargo": "Analista de Dados",
+      "celular": "+5511976543210",
+      "email": "bia.souza@datatech.com",
+      "address1": {
+        "street": "Alameda Santos, 455",
+        "neighborhood": "Cerqueira César",
+        "city": "São Paulo",
+        "state": "SP",
+        "country": "Brasil",
+        "zip_code": "01419-000"
+      }
+    },
+    {
+      "id": 5,
+      "nome": "John",
+      "sobrenome": "Doe",
+      "cargo": "Security Specialist",
+      "celular": "+14155550198",
+      "email": "j.doe@infosec.org",
+      "address1": {
+        "street": "Market Street, 789",
+        "neighborhood": "SoMa",
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "EUA",
+        "zip_code": "94103"
+      }
+    },
+    {
+      "id": 6,
+      "nome": "Chloé",
+      "sobrenome": "Laurent",
+      "cargo": "Designer Gráfico",
+      "celular": "+33491334455",
+      "email": "chloe.l@studioart.fr",
+      "address1": {
+        "street": "Rue de la République, 15",
+        "neighborhood": "Vieux-Port",
+        "city": "Marseille",
+        "state": "PACA",
+        "country": "França",
+        "zip_code": "13002"
+      }
+    },
+    {
+      "id": 7,
+      "nome": "Thiago",
+      "sobrenome": "Santos",
+      "cargo": "Engenheiro de DevOps",
+      "celular": "+5531988887777",
+      "email": "thiago.santos@cloudnet.br",
+      "address1": {
+        "street": "Avenida Afonso Pena, 2300",
+        "neighborhood": "Funcionários",
+        "city": "Belo Horizonte",
+        "state": "MG",
+        "country": "Brasil",
+        "zip_code": "30130-007"
+      }
+    },
+    {
+      "id": 8,
+      "nome": "Emily",
+      "sobrenome": "Smith",
+      "cargo": "HR Coordinator",
+      "celular": "+13125550122",
+      "email": "emily.smith@talentco.com",
+      "address1": {
+        "street": "Michigan Avenue, 645",
+        "neighborhood": "Near North Side",
+        "city": "Chicago",
+        "state": "IL",
+        "country": "EUA",
+        "zip_code": "60611"
+      }
+    },
+    {
+      "id": 9,
+      "nome": "Thomas",
+      "sobrenome": "Mercier",
+      "cargo": "Consultor Financeiro",
+      "celular": "+33478991122",
+      "email": "t.mercier@rhone-finance.fr",
+      "address1": {
+        "street": "Rue de la Barre, 4",
+        "neighborhood": "Bellecour",
+        "city": "Lyon",
+        "state": "Auvergne-Rhône-Alpes",
+        "country": "França",
+        "zip_code": "69002"
+      }
+    },
+    {
+      "id": 10,
+      "nome": "Amanda",
+      "sobrenome": "Oliveira",
+      "cargo": "Gerente de Marketing",
+      "celular": "+5551991234567",
+      "email": "amanda.o@mktbrands.com",
+      "address1": {
+        "street": "Rua Padre Chagas, 120",
+        "neighborhood": "Moinhos de Vento",
+        "city": "Porto Alegre",
+        "state": "RS",
+        "country": "Brasil",
+        "zip_code": "90570-080"
+      }
+    },
+    {
+      "id": 11,
+      "nome": "Michael",
+      "sobrenome": "Brown",
+      "cargo": "Software Architect",
+      "celular": "+12065550175",
+      "email": "mbrown@systemsarc.io",
+      "address1": {
+        "street": "Pike Street, 1530",
+        "neighborhood": "Downtown",
+        "city": "Seattle",
+        "state": "WA",
+        "country": "EUA",
+        "zip_code": "98101"
+      }
+    },
+    {
+      "id": 12,
+      "nome": "Léa",
+      "sobrenome": "Moreau",
+      "cargo": "Arquiteta de Interiores",
+      "celular": "+33556112233",
+      "email": "lea.moreau@architecture.fr",
+      "address1": {
+        "street": "Cours de l'Intendance, 88",
+        "neighborhood": "Centre-Ville",
+        "city": "Bordeaux",
+        "state": "Nouvelle-Aquitaine",
+        "country": "França",
+        "zip_code": "33000"
+      }
+    },
+    {
+      "id": 13,
+      "nome": "Felipe",
+      "sobrenome": "Almeida",
+      "cargo": "Suporte Técnico",
+      "celular": "+5581987651234",
+      "email": "felipe.almeida@itport.br",
+      "address1": {
+        "street": "Rua do Bom Jesus, 20",
+        "neighborhood": "Recife Antigo",
+        "city": "Recife",
+        "state": "PE",
+        "country": "Brasil",
+        "zip_code": "50030-000"
+      }
+    },
+    {
+      "id": 14,
+      "nome": "David",
+      "sobrenome": "Miller",
+      "cargo": "Database Administrator",
+      "celular": "+16175550131",
+      "email": "dmiller@bostontech.edu",
+      "address1": {
+        "street": "Boylston Street, 500",
+        "neighborhood": "Back Bay",
+        "city": "Boston",
+        "state": "MA",
+        "country": "EUA",
+        "zip_code": "02116"
+      }
+    },
+    {
+      "id": 15,
+      "nome": "Manon",
+      "sobrenome": "Roux",
+      "cargo": "Advogada",
+      "celular": "+33320556677",
+      "email": "manon.roux@avocats-lille.fr",
+      "address1": {
+        "street": "Grand Place, 12",
+        "neighborhood": "Vieux-Lille",
+        "city": "Lille",
+        "state": "Hauts-de-France",
+        "country": "França",
+        "zip_code": "59800"
+      }
+    },
+    {
+      "id": 16,
+      "nome": "Camila",
+      "sobrenome": "Lima",
+      "cargo": "Coordenadora Acadêmica",
+      "celular": "+5561998881122",
+      "email": "camila.lima@edu.br",
+      "address1": {
+        "street": "SGAN Quadra 603, Conjunto C",
+        "neighborhood": "Asa Norte",
+        "city": "Brasília",
+        "state": "DF",
+        "country": "Brasil",
+        "zip_code": "70830-030"
+      }
+    },
+    {
+      "id": 17,
+      "nome": "James",
+      "sobrenome": "Wilson",
+      "cargo": "QA Engineer",
+      "celular": "+15125550164",
+      "email": "jwilson@austin-labs.io",
+      "address1": {
+        "street": "Congress Avenue, 100",
+        "neighborhood": "Downtown",
+        "city": "Austin",
+        "state": "TX",
+        "country": "EUA",
+        "zip_code": "78701"
+      }
+    },
+    {
+      "id": 18,
+      "nome": "Hugo",
+      "sobrenome": "Simon",
+      "cargo": "Engenheiro Biomédico",
+      "celular": "+33388445566",
+      "email": "hugo.simon@biotech.fr",
+      "address1": {
+        "street": "Rue du Vieux-Marché-aux-Poissons, 21",
+        "neighborhood": "Centre",
+        "city": "Strasbourg",
+        "state": "Grand Est",
+        "country": "França",
+        "zip_code": "67000"
+      }
+    },
+    {
+      "id": 19,
+      "nome": "Rodrigo",
+      "sobrenome": "Cardoso",
+      "cargo": "Analista de Infraestrutura",
+      "celular": "+5521971239876",
+      "email": "rcardoso@infraflow.com.br",
+      "address1": {
+        "street": "Rua Voluntários da Pátria, 300",
+        "neighborhood": "Botafogo",
+        "city": "Rio de Janeiro",
+        "state": "RJ",
+        "country": "Brasil",
+        "zip_code": "22270-014"
+      }
+    },
+    {
+      "id": 20,
+      "nome": "Jessica",
+      "sobrenome": "Taylor",
+      "cargo": "Data Scientist",
+      "celular": "+12135550119",
+      "email": "jtaylor@calianalytics.com",
+      "address1": {
+        "street": "Wilshire Boulevard, 6000",
+        "neighborhood": "Miracle Mile",
+        "city": "Los Angeles",
+        "state": "CA",
+        "country": "EUA",
+        "zip_code": "90036"
+      }
+    }
+  ]
+}

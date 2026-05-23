@@ -7,6 +7,7 @@
 #define STATIC_VECTOR_CAPACITY 5000
 
 // Estrutura do motor físico interno
+// contact_engine_t em tese é uma opção da lista
 typedef struct {
     contact_t *data;
     unsigned int next_id;
