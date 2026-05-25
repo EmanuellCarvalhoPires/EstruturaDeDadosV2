@@ -232,7 +232,7 @@ bool Model_AddContact(contact_model_t *model, const contact_t *new_contact) {
     printf("Contato %s adicionado com sucesso!\n", new_contact->nome);
 
     model->total_count++;
-    model->engine->next_id = new_contact->id;
+    model->engine->next_id = new_contact->id + 1;
     // Use model->engine->data[model->total_count] para inserir o novo contato recebido pela função na última posição do no vetor
 
     // Atualize model->total_count e model->engine->next_id
