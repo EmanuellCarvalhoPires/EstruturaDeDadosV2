@@ -12,4 +12,5 @@ add_executable(contacts_app
         include/model.h
         include/controller.h
         include/cJSON.h
-        include/nuklear.h)
+        include/nuklear.h
+        src/main.c)

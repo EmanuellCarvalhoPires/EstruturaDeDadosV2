@@ -66,6 +66,11 @@ static void Helper_CleanJsonStr(char *dest, const char *src, size_t max_len) {
     dest[j] = '\0';
 }
 
+
+// essa função recebe o "Objeto" que contém o vetor com as 5 mil posições E depois disso ele
+// insere os "contatos" que estão no arquivo JSON dentro do vetor de 5 mil posições, ou seja,
+// Ele apenas CRIA o vetor com os contatos do JSON, ele deve rodar uma única vez
+
 bool Model_LoadFromJson(contact_model_t *model, const char *filename) {
     if (!model || !model->engine || !model->engine->data) return false;
 
@@ -114,7 +119,7 @@ bool Model_LoadFromJson(contact_model_t *model, const char *filename) {
                 // AQUI ACONTECE A INSERÇÃO NO VETOR DE CONTATOS
                 // Cria uma variável ponteiro que recebe o endereço da POSIÇÃO ATUAL dentro do vetor data
                 contact_t *dest = &model->engine->data[model->total_count];
-                    // memcpy(destino, origem, quantidade_de_bytes); copia um bloco de memória em um endereço para outro endereço
+                    // memcpy(destino, origem, quantidade_de_bytes); copia um bloco de memória em um endereço e cola em outro endereço
                     memcpy(dest, &temp_contact, sizeof(contact_t));
                 model->total_count++;
 
@@ -219,12 +224,16 @@ bool Model_AddContact(contact_model_t *model, const contact_t *new_contact) {
         return NULL;
     }
 
-    // o vetor que você vai inserir o contato é: model->engine->data
+    // A função "Model_LoadFromJson" vai preencher o vetor com os contatos existentes dentro do JSON
+    // E aí o vetor que você vai inserir o contato é: model->engine->data
+    // Essa função deve inserir o objeto do tipo "contact_t" dentro do vetor na última posição
 
-    // Aqui eu devo chamar a função "Model_LoadFromJson" que vai retornar true or false, se ele retornar true significa que ele obteve sucesso
-    // Ao tentar preencher o "objeto" contact_t temp_contact, ou seja, você pode usar esse "objeto" para inserir no vetor
+    model->engine->data[model->total_count] = *new_contact;
+    printf("Contato %s adicionado com sucesso!\n", new_contact->nome);
 
-    // Use model->engine->data[model->total_count] para inserir o "objeto" temp_contact no vetor
+    model->total_count++;
+    model->engine->next_id = new_contact->id;
+    // Use model->engine->data[model->total_count] para inserir o novo contato recebido pela função na última posição do no vetor
 
     // Atualize model->total_count e model->engine->next_id
     //
